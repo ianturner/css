@@ -1,0 +1,54 @@
+HTML:
+<div>
+  <label>Checkbox</label>
+  <input type="checkbox">
+</div>
+
+<div>
+  <label>Radio Group</label>
+  <input type="radio" name="radiogroup" value="1"><label>One</label>
+  <input type="radio" name="radiogroup" value="2"><label>Two</label>
+  <input type="radio" name="radiogroup" value="3"><label>Three</label>
+</div>
+
+CSS:
+/* using fontawesome characters for this example, so define a font face */
+@font-face {
+  font-family: 'CheckboxFontAwesome';
+  src: url('fontawesome-webfont.eot?v=3.2.1');
+  src: url('fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+       url('fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+       url('fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+       url('fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+input[type=checkbox], input[type=radio] {
+	font-family: 'CheckboxFontAwesome';
+	font-size: 1.4em;
+	color: #999;
+
+	display: inline-block;
+	max-width: 0px;
+	max-height: 16px;
+}
+ 
+input[type=checkbox]:not(:checked):before {
+	content: "\f096"; /* fontawesome's icon-check-empty */
+}
+input[type=checkbox]:checked:before {
+	content: "\f046"; /* fontawesome's icon-check */
+}
+
+/* font-based radio buttons */
+input[type=radio] {
+	margin-right: 12px; /* spacing for following label */
+}
+ 
+input[type=radio]:not(:checked):before {
+	content: "\f10c"; /* fontawesome's icon-circle-blank */
+}
+input[type=radio]:checked:before {
+	content: "\f058"; /* fontawesome's icon-ok-circle */
+}
